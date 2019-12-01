@@ -22,10 +22,10 @@ jobs:
    #     env:
    #     - PACKAGE=lib/ftdi
    #
-   #   # or1k toolchain
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=binutils     TOOLCHAIN_ARCH=or1k
+      # or1k toolchain
+      - stage: "a"
+        env:
+        - PACKAGE=binutils     TOOLCHAIN_ARCH=or1k
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=or1k
@@ -39,10 +39,10 @@ jobs:
    #     env:
    #     - PACKAGE=gdb          TOOLCHAIN_ARCH=or1k
    #
-   #   # rv32 toolchain
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=binutils     TOOLCHAIN_ARCH=riscv32
+      # rv32 toolchain
+      - stage: "a"
+        env:
+        - PACKAGE=binutils     TOOLCHAIN_ARCH=riscv32
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=riscv32
@@ -56,10 +56,10 @@ jobs:
    #     env:
    #     - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv32
    #
-   #   # rv64 toolchain
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=binutils     TOOLCHAIN_ARCH=riscv64
+      # rv64 toolchain
+      - stage: "a"
+        env:
+        - PACKAGE=binutils     TOOLCHAIN_ARCH=riscv64
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=riscv64
@@ -73,10 +73,10 @@ jobs:
    #     env:
    #     - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv64
    #
-   #   # lm32 toolchain - no linux
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=binutils     TOOLCHAIN_ARCH=lm32
+      # lm32 toolchain - no linux
+      - stage: "a"
+        env:
+        - PACKAGE=binutils     TOOLCHAIN_ARCH=lm32
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=lm32
@@ -87,10 +87,10 @@ jobs:
    #     env:
    #     - PACKAGE=gdb          TOOLCHAIN_ARCH=lm32
    #
-   #   # ppc64le toolchain
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=binutils     TOOLCHAIN_ARCH=ppc64le
+      # ppc64le toolchain
+      - stage: "a"
+        env:
+        - PACKAGE=binutils     TOOLCHAIN_ARCH=ppc64le
    ##   - stage: "a"
    ##     env:
    ##     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=ppc64le
@@ -104,10 +104,10 @@ jobs:
    ##     env:
    ##     - PACKAGE=gdb          TOOLCHAIN_ARCH=ppc64le
    #
-   #   # sh2 toolchain
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=binutils     TOOLCHAIN_ARCH=sh
+      # sh2 toolchain
+      - stage: "a"
+        env:
+        - PACKAGE=binutils     TOOLCHAIN_ARCH=sh
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=sh
@@ -152,17 +152,17 @@ jobs:
    #     env:
    #     - PACKAGE=prog/patchelf
    #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=prog/icefunprog
+      - stage: "a"
+        env:
+        - PACKAGE=prog/icefunprog
    #
    #   - stage: "a"
    #     env:
    #     - PACKAGE=prog/openocd
    #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=prog/flterm
+      - stage: "a"
+        env:
+        - PACKAGE=prog/flterm
    #
    #   - stage: "a"
    #     env:
@@ -172,10 +172,10 @@ jobs:
    #     env:
    #     - PACKAGE=prog/dfu-util
    #
-   #   # EDA Tools - Bitstream Tool
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=eda/bit/icestorm
+      # EDA Tools - Bitstream Tool
+      - stage: "a"
+        env:
+        - PACKAGE=eda/bit/icestorm
    #
    #   - stage: "a"
    #     env:
