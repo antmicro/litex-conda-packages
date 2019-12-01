@@ -50,7 +50,7 @@ export PATH="$CONDA_PATH/bin:$PATH"
 
 export GIT_SSL_NO_VERIFY=1
 export GITREV="$(git describe --long 2>/dev/null || echo "unknown")"
-export CONDA_BUILD_ARGS=$PACKAGE
+export CONDA_BUILD_ARGS="$PACKAGE -c timvideos"
 if [ -f "$PACKAGE/conda_build_config.$TOOLCHAIN_ARCH.yaml" ]; then
 	export CONDA_BUILD_ARGS="$CONDA_BUILD_ARGS -m $PACKAGE/conda_build_config.$TOOLCHAIN_ARCH.yaml"
 fi
