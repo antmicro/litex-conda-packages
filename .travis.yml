@@ -7,17 +7,50 @@ addons:
     packages:
     - realpath
 
-env:
- - PACKAGE=lib/isl
- - PACKAGE=lib/usb
- - PACKAGE=lib/ftdi
- - PACKAGE=sdcc
- - PACKAGE=prog/iceprog
- - PACKAGE=prog/icefunprog
- - PACKAGE=prog/openocd
- - PACKAGE=prog/flterm
- - PACKAGE=prog/fxload
- - PACKAGE=prog/dfu-util
+jobs:
+  include:
+   # Libraries
+   - stage: "Libraries"
+     env:
+     - PACKAGE=lib/isl
+
+   - stage: "Libraries"
+     env:
+     - PACKAGE=lib/usb
+
+   - stage: "Libraries"
+     env:
+     - PACKAGE=lib/ftdi
+
+   # Other tools
+   - stage: "Other Tools"
+     env:
+     - PACKAGE=sdcc
+
+   # Programming Tools
+   - stage: "Programming Tools"
+     env:
+     - PACKAGE=prog/iceprog
+
+   - stage: "Programming Tools"
+     env:
+     - PACKAGE=prog/icefunprog
+
+   - stage: "Programming Tools"
+     env:
+     - PACKAGE=prog/openocd
+
+   - stage: "Programming Tools"
+     env:
+     - PACKAGE=prog/flterm
+
+   - stage: "Programming Tools"
+     env:
+     - PACKAGE=prog/fxload
+
+   - stage: "Programming Tools"
+     env:
+     - PACKAGE=prog/dfu-util
 
 
 before_install:
