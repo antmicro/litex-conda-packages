@@ -22,7 +22,14 @@ set +e
 start_section "conda.build" "${GREEN}Building..${NC}"
 $CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
 if [[ $? -ne 0 ]]; then
+    echo "FAILURE"
     cat /tmp/output.log
+    ls -l /tmp/conda/lib/usb
+    for i in  /tmp/really-long-path/conda/conda-bld/libusb_*/*
+    do
+        echo $i
+        ls $i
+    done
 fi
 set -e
 end_section "conda.build"
