@@ -2,8 +2,6 @@ language: minimal
 
 os:
   - osx
-  - linux
-dist: xenial
 addons:
   apt:
     packages:
