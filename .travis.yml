@@ -233,4 +233,5 @@ after_success:
 
 cache:
   directories:
-   - /home/travis/.conda/pkgs
+   - $HOME/.conda/pkgs
+   - $HOME/sdk
