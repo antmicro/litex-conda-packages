@@ -211,11 +211,6 @@ jobs:
      env:
      - PACKAGE=eda/sim/verilator
 
-matrix:
-  allow_failures:
-  - env: PACKAGE=vtr CONDA_CHANNELS=conda-forge
-  fast_finish: true
-
 before_install:
  - source $TRAVIS_BUILD_DIR/.travis/common.sh
  - bash $TRAVIS_BUILD_DIR/.travis/fixup-git.sh
