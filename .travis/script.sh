@@ -18,8 +18,13 @@ end_section "conda.check"
 $SPACER
 
 set -x
+set +e
 start_section "conda.build" "${GREEN}Building..${NC}"
 $CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
+if [[ $? -ne 0 ]]; then
+    cat /tmp/output.log
+fi
+set -e
 end_section "conda.build"
 set +x
 
