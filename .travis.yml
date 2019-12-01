@@ -9,7 +9,7 @@ addons:
 
 jobs:
   include:
-    Libraries
+   # Libraries
       - stage: "a"
         env:
         - PACKAGE=lib/isl
