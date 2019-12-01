@@ -25,6 +25,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - gperf
+    - bison
   run:
   {% for package in resolved_packages('host') %}
     - {{ package }}
