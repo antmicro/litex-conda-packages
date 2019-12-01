@@ -9,10 +9,10 @@ addons:
 
 jobs:
   include:
-   # Libraries
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=lib/isl
+    Libraries
+      - stage: "a"
+        env:
+        - PACKAGE=lib/isl
    #
    #   - stage: "a"
    #     env:
@@ -148,9 +148,9 @@ jobs:
    #     env:
    #     - PACKAGE=prog/iceprog
    #
-      - stage: "a"
-        env:
-        - PACKAGE=prog/patchelf
+   #   - stage: "a"
+   #     env:
+   #     - PACKAGE=prog/patchelf
    #
    #   - stage: "a"
    #     env:
