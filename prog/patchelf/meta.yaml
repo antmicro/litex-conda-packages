@@ -10,28 +10,18 @@ source:
     sha256: 99c1d47a27afc52dedcf80379c789ae67113d043bafc5bc88f9293eb198b011a
     url: http://nixos.org/releases/patchelf/patchelf-0.10/patchelf-0.10.tar.gz
 build:
-    binary_relocation: false
-    number: '0'
-    string: h0a44026_0
+    # number: 201803050325
+    number: {{ environ.get('DATE_NUM') }}
+    # string: 20180305_0325
+    string: {{ environ.get('DATE_STR') }}
+    script_env:
+      - CI
+      - TRAVIS
 requirements:
     build:
-        - cctools 895 1
-        - clang 4.0.1 1
-        - clang_osx-64 4.0.1 h1ce6c1d_18
-        - clangxx 4.0.1 1
-        - clangxx_osx-64 4.0.1 h22b1bf0_18
-        - compiler-rt 4.0.1 hcfea43d_1
-        - ld64 274.2 1
-        - libcxx 4.0.1 hcfea43d_1
-        - libcxxabi 4.0.1 hcfea43d_1
-        - llvm 4.0.1 1
-        - llvm-lto-tapi 4.0.1 1
-        - make 4.2.1 h3efe00b_1
-    host:
-        - libcxx 4.0.1 hcfea43d_1
-        - libcxxabi 4.0.1 hcfea43d_1
-    run:
-        - libcxx >=4.0.1
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - make
 test:
     commands:
         - test "$(patchelf --version)" == "patchelf 0.10"
