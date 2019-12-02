@@ -1,14 +1,14 @@
 package:
   name: libusb
-  version: 1.0.20
+  version: 1.0.22
 
 source:
-  fn:   libusb-1.0.20.tar.bz2 # [linux]
-  url:  https://github.com/libusb/libusb/releases/download/v1.0.20/libusb-1.0.20.tar.bz2 # [linux]
-  sha1: 9537243f165927bde74ad742e6b3effb0bd50cd2 # [linux]
+  fn:   libusb-1.0.22.tar.bz2 # [linux]
+  url:  https://github.com/libusb/libusb/releases/download/v1.0.22/libusb-1.0.22.tar.bz2 # [linux]
+  sha1: 75aeb9d59a4fdb800d329a545c2e6799f732362193b465ea198f2aa275518157 # [linux]
   fn:   libusb.7z # [win]
-  url:  https://github.com/libusb/libusb/releases/download/v1.0.20/libusb-1.0.20.7z # [win]
-  sha1: 35e4ca3255b4c1c3068e4bc50077abb7d7bb6162 # [win]
+  url:  https://github.com/libusb/libusb/releases/download/v1.0.20/libusb-1.0.22.7z # [win]
+  sha1: 671f1a420757b4480e7fadc8313d6fb3cbb75ca00934c417c1efa6e77fb8779b # [win]
 
 build:
   # number: 201803050325
