@@ -20,9 +20,9 @@ jobs:
         env:
         - PACKAGE=lib/usb
    #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=lib/ftdi
+      - stage: "a"
+        env:
+        - PACKAGE=lib/ftdi
    #
       # or1k toolchain
       - stage: "a"
