@@ -2,6 +2,7 @@
 
 source $TRAVIS_BUILD_DIR/.travis/common.sh
 set -e
+set -x
 
 # Getting the conda environment
 start_section "environment.conda" "Setting up basic ${YELLOW}conda environment${NC}"
