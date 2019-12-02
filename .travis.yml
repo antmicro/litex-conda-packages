@@ -356,10 +356,6 @@ jobs:
    - os: windows
      env:
      - PACKAGE=eda/bit/prjtrellis
-   # EDA Tools - Synthesis
-   - os: windows
-     env:
-     - PACKAGE=eda/syn/yosys
    # EDA Tools - Place and Route
    - os: windows
      env:
