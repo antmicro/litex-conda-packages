@@ -1,9 +1,9 @@
 language: minimal
 
 os:
-  - osx
   - linux
-dist: xenial
+    dist: xenial
+  - windows
 addons:
   apt:
     packages:
@@ -211,6 +211,185 @@ jobs:
      - PACKAGE=eda/sim/icarus
 
    - stage: "EDA Tools"
+     env:
+     - PACKAGE=eda/sim/verilator
+
+  exclude:
+   # Exclude all builds on windows
+   # Libraries
+   - os: windows
+     env:
+     - PACKAGE=lib/isl
+   - os: windows
+     env:
+     - PACKAGE=lib/usb
+   - os: windows
+     env:
+     - PACKAGE=lib/ftdi
+   # or1k toolchain
+   - os: windows
+     env:
+     - PACKAGE=binutils     TOOLCHAIN_ARCH=or1k
+   - os: windows
+     env:
+     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=or1k
+   - os: windows
+     env:
+     - PACKAGE=gcc/newlib   TOOLCHAIN_ARCH=or1k
+   - os: windows
+     env:
+     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=or1k
+   - os: windows
+     env:
+     - PACKAGE=gdb          TOOLCHAIN_ARCH=or1k
+   # rv32 toolchain
+   - os: windows
+     env:
+     - PACKAGE=binutils     TOOLCHAIN_ARCH=riscv32
+   - os: windows
+     env:
+     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=riscv32
+   - os: windows
+     env:
+     - PACKAGE=gcc/newlib   TOOLCHAIN_ARCH=riscv32
+   - os: windows
+     env:
+     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=riscv32
+   - os: windows
+     env:
+     - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv32
+   # rv64 toolchain
+   - os: windows
+     env:
+     - PACKAGE=binutils     TOOLCHAIN_ARCH=riscv64
+   - os: windows
+     env:
+     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=riscv64
+   - os: windows
+     env:
+     - PACKAGE=gcc/newlib   TOOLCHAIN_ARCH=riscv64
+   - os: windows
+     env:
+     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=riscv64
+   - os: windows
+     env:
+     - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv64
+   # lm32 toolchain - no linux
+   - os: windows
+     env:
+     - PACKAGE=binutils     TOOLCHAIN_ARCH=lm32
+   - os: windows
+     env:
+     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=lm32
+   - os: windows
+     env:
+     - PACKAGE=gcc/newlib   TOOLCHAIN_ARCH=lm32
+   - os: windows
+     env:
+     - PACKAGE=gdb          TOOLCHAIN_ARCH=lm32
+   # ppc64le toolchain
+   - os: windows
+     env:
+     - PACKAGE=binutils     TOOLCHAIN_ARCH=ppc64le
+#   - os: windows
+#     env:
+#     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=ppc64le
+#   - os: windows
+#     env:
+#     - PACKAGE=gcc/newlib   TOOLCHAIN_ARCH=ppc64le
+   - os: windows
+     env:
+     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=ppc64le
+#   - os: windows
+#     env:
+#     - PACKAGE=gdb          TOOLCHAIN_ARCH=ppc64le
+   # sh2 toolchain
+   - os: windows
+     env:
+     - PACKAGE=binutils     TOOLCHAIN_ARCH=sh
+   - os: windows
+     env:
+     - PACKAGE=gcc/nostdc   TOOLCHAIN_ARCH=sh
+   - os: windows
+     env:
+     - PACKAGE=gcc/newlib   TOOLCHAIN_ARCH=sh
+   - os: windows
+     env:
+     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=sh
+   - os: windows
+     env:
+     - PACKAGE=gdb          TOOLCHAIN_ARCH=sh
+   # Full Linux musl toolchain using musl-cross-make
+   - os: windows
+     env:
+     - PACKAGE=toolchain/linux-musl TOOLCHAIN_ARCH=or1k
+   - os: windows
+     env:
+     - PACKAGE=toolchain/linux-musl TOOLCHAIN_ARCH=riscv32
+   - os: windows
+     env:
+     - PACKAGE=toolchain/linux-musl TOOLCHAIN_ARCH=riscv64
+#   - os: windows
+#     env:
+#     - PACKAGE=toolchain/linux-musl TOOLCHAIN_ARCH=ppc64le
+   - os: windows
+     env:
+     - PACKAGE=toolchain/linux-musl TOOLCHAIN_ARCH=sh
+   # Other tools
+   - os: windows
+     env:
+     - PACKAGE=sdcc
+   # Programming Tools
+   - os: windows
+     env:
+     - PACKAGE=prog/iceprog
+   - os: windows
+     env:
+     - PACKAGE=prog/icefunprog
+   - os: windows
+     env:
+     - PACKAGE=prog/openocd
+   - os: windows
+     env:
+     - PACKAGE=prog/flterm
+   - os: windows
+     env:
+     - PACKAGE=prog/fxload
+   - os: windows
+     env:
+     - PACKAGE=prog/dfu-util
+   # EDA Tools - Bitstream Tool
+   - os: windows
+     env:
+     - PACKAGE=eda/bit/icestorm
+   - os: windows
+     env:
+     - PACKAGE=eda/bit/prjtrellis
+   # EDA Tools - Synthesis
+   - os: windows
+     env:
+     - PACKAGE=eda/syn/yosys
+   # EDA Tools - Place and Route
+   - os: windows
+     env:
+     - PACKAGE=eda/pnr/arachne
+   - os: windows
+     env:
+     - PACKAGE=eda/pnr/nextpnr/ice40
+   - os: windows
+     env:
+     - PACKAGE=eda/pnr/nextpnr/ecp5
+   - os: windows
+     env:
+     - PACKAGE=eda/pnr/nextpnr/generic
+#   - os: windows
+#     env:
+#     - PACKAGE=eda/pnr/vtr                 CONDA_CHANNELS=conda-forge
+   # EDA Tools - Simulation
+   - os: windows
+     env:
+     - PACKAGE=eda/sim/icarus
+   - os: windows
      env:
      - PACKAGE=eda/sim/verilator
 
