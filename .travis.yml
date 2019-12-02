@@ -14,9 +14,9 @@ jobs:
         env:
         - PACKAGE=lib/isl
    #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=lib/usb
+      - stage: "a"
+        env:
+        - PACKAGE=lib/usb
    #
    #   - stage: "a"
    #     env:
