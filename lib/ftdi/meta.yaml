@@ -30,8 +30,8 @@ requirements:
     - swig
   run:
     - {{ compiler('c') }}
-    - libgcc-ng [not win]
-    - libstdcxx-ng [not win]
+    - libgcc-ng    [linux]
+    - libstdcxx-ng [linux]
     - libusb
     - python
 
