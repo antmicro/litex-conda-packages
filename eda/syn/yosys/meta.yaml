@@ -21,23 +21,29 @@ build:
 
 requirements:
   build:
+    - msys2:m2w64-toolchain [win]
+    - msys2:m2-base [win]
+    - msys2:m2w64-tcl [win]
+    - msys2:m2-bison [win]
+    - msys2:m2-fle [win]
     - python 3.7
     - tk
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - bison
-    - flex
-    - iverilog
-    - libffi
-    - pkg-config
+    - msys2:m2w64-toolchain [win]
+    - msys2:m2-base [win]
+    - msys2:m2w64-tcl [win]
+    - msys2:m2-bison [win]
+    - msys2:m2-fle [win]
+    - bison [not win]
+    - flex [not win]
+    - iverilog [not win]
+    - libffi [not win]
+    - pkg-config [not win]
     - python 3.7
-    - tk
   run:
-    - flex
-    - libffi
     - python {{ python }}
-    - tk
 
 about:
   home: http://www.clifford.at/yosys/
