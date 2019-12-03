@@ -193,9 +193,9 @@ jobs:
    #     env:
    #     - PACKAGE=eda/pnr/arachne
    #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=eda/pnr/nextpnr/ice40
+      - stage: "a"
+        env:
+        - PACKAGE=eda/pnr/nextpnr/ice40
    #
    #   - stage: "a"
    #     env:
