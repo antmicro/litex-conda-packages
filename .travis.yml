@@ -3,9 +3,9 @@ language: minimal
 os:
   - osx
 addons:
-  apt:
+  homebrew:
     packages:
-    - realpath
+    update: false
 
 jobs:
   include:
