@@ -140,10 +140,10 @@ jobs:
    #     env:
    #     - PACKAGE=toolchain/linux-musl TOOLCHAIN_ARCH=sh
    #
-   #   # Other tools
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=sdcc
+      # Other tools
+      - stage: "a"
+        env:
+        - PACKAGE=sdcc
    #
       # Programming Tools
       - stage: "a"
