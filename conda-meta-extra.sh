@@ -30,6 +30,6 @@ for meta in $(find -name meta.yaml); do
 	(
 		cd $(dirname $meta);
 		ls -l
-		ln -sf $(python3 -c "import os.path; print(os.path.relpath('$TOP/recipe_append.yaml'))") recipe_append.yaml
+		cp $(python -c "import os.path; print(os.path.relpath('$TOP/recipe_append.yaml'))") recipe_append.yaml
 	)
 done
