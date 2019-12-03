@@ -209,10 +209,10 @@ jobs:
    ##     env:
    ##     - PACKAGE=eda/pnr/vtr                 CONDA_CHANNELS=conda-forge
    #
-   #   # EDA Tools - Simulation
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=eda/sim/icarus
+      # EDA Tools - Simulation
+      - stage: "a"
+        env:
+        - PACKAGE=eda/sim/icarus
    #
    #   - stage: "a"
    #     env:
