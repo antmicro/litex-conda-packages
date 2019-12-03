@@ -165,10 +165,10 @@ jobs:
       - stage: "a"
         env:
         - PACKAGE=prog/flterm
-   #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=prog/fxload
+   
+      - stage: "a"
+        env:
+        - PACKAGE=prog/fxload
    #
    #   - stage: "a"
    #     env:
