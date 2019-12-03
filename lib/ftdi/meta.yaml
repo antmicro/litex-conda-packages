@@ -25,12 +25,12 @@ requirements:
   host:
     - cmake # [linux]
     - boost
-    - pkg-config
+    - pkg-config [not win]
     - swig
   run:
     - {{ compiler('c') }}
-    - libgcc-ng
-    - libstdcxx-ng
+    - libgcc-ng [not win]
+    - libstdcxx-ngi [not win]
     - libusb
     - python
 
