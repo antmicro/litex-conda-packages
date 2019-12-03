@@ -19,7 +19,7 @@ $SPACER
 
 start_section "conda.build" "${GREEN}Building..${NC}"
 #$CONDA_PATH/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
-conda build $CONDA_BUILD_ARGS |tee /tmp/output.log
+conda build $CONDA_BUILD_ARGS |& tee /tmp/output.log
 end_section "conda.build"
 
 $SPACER
