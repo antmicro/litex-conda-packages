@@ -27,6 +27,6 @@ for meta in $(find -name meta.yaml); do
 	(
 		cd $(dirname $meta);
 		ls -l
-		cp $(python -c "import os.path; print(os.path.abspath('$TOP/recipe_append.yaml'))") recipe_append.yaml
+		ln -sf $(python -c "import os.path; path=os.path.abspath('$TOP/recipe_append.yaml'); print(path[:2] + path[4:])") recipe_append.yaml
 	)
 done
