@@ -22,8 +22,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - libboost
-    - py-boost
+    - libboost=1.67
+    - py-boost=1.67
     - python 3.7
   host:
     - cmake
@@ -32,8 +32,8 @@ requirements:
   run:
     - bison
     - flex
-    - libboost
-    - py-boost
+    - libboost=1.67
+    - py-boost=1.67
     - python
 
 about:
