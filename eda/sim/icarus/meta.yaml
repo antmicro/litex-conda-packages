@@ -26,6 +26,8 @@ requirements:
     - {{ compiler('cxx') }}
     - gperf [not win]
     - bison [not win]
+    - msys2:m2-gperf [win]
+    - msys2:m2-bison [win]
   run:
   {% for package in resolved_packages('host') %}
     - {{ package }}

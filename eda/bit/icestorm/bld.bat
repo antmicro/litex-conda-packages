@@ -1,26 +1,18 @@
-REM sed -i "s/-ggdb //;" config.mk
-REM 
-REM if errorlevel 1 exit 1
-REM 
-REM 
-REM 
-REM make ^
-REM     CXX="x86_64-w64-mingw32-g++" ^
-REM     STATIC=1 ^
-REM     PYTHON=python ^
-REM     SUBDIRS="icebox icepack icemulti icepll icebram"
-REM if errorlevel 1 exit 1
-REM 
-REM icetime doesn't work if compiled when PREFIX contains
-REM REM backslashes, so build it separately
-REM make ^
-REM CXX="x86_64-w64-mingw32-g++" ^
-REM STATIC=1 ^
-REM PYTHON=python ^
-REM PREFIX=~/ ^
-REM SUBDIRS="icetime"
-REM if errorlevel 1 exit 1
-make -j2 STATIC=1
+@echo on
+
+sed -i "s/-ggdb //;" config.mk
+if errorlevel 1 exit 1
+REM python3 is in python.exe on windows
+sed -i "s/python3/python/;" icebox/Makefile
+if errorlevel 1 exit 1
+sed -i "s/python3/python/;" icetime/Makefile
+if errorlevel 1 exit 1
+make -j2 CXX="x86_64-w64-mingw32-g++" SUBDIRS="icebox icepack icemulti icepll icebram"
+if errorlevel 1 exit 1
+
+REM icetime fails when PREFIX contains backslashes
+make -j2 CXX="x86_64-w64-mingw32-g++" SUBDIRS="icetime" PREFIX=~/
+if errorlevel 1 exit 1
 
 mkdir %PREFIX%\bin
 if errorlevel 1 exit 1
