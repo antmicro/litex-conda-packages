@@ -23,7 +23,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - pkg-config
+    - pkg-config [not win]
   host:
     - libftdi
     - libusb

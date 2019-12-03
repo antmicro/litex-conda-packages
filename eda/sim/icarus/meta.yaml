@@ -21,11 +21,11 @@ build:
 
 requirements:
   build:
-    - readline
+    - readline [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - gperf
-    - bison
+    - gperf [not win]
+    - bison [not win]
   run:
   {% for package in resolved_packages('host') %}
     - {{ package }}

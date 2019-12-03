@@ -26,7 +26,7 @@ requirements:
     - automake [not win]
     - autoconf [not win]
   host:
-    - pkg-config
+    - pkg-config [not win]
 
 about:
   home: http://libusb.org

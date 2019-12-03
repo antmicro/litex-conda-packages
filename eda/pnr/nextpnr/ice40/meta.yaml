@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - python 3.7
-    - fontconfig
+    - fontconfig [not win]
   host:
     - bison
     - boost

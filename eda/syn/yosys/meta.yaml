@@ -25,7 +25,7 @@ requirements:
     - msys2:m2-base [win]
     - msys2:m2w64-tcl [win]
     - msys2:m2-bison [win]
-    - msys2:m2-fle [win]
+    - msys2:m2-flex [win]
     - python 3.7
     - tk
     - {{ compiler('c') }}
@@ -35,7 +35,7 @@ requirements:
     - msys2:m2-base [win]
     - msys2:m2w64-tcl [win]
     - msys2:m2-bison [win]
-    - msys2:m2-fle [win]
+    - msys2:m2-flex [win]
     - bison [not win]
     - flex [not win]
     - iverilog [not win]
