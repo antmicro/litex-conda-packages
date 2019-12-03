@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 
 source .travis/common.sh
 set -e
@@ -18,7 +18,8 @@ end_section "conda.check"
 $SPACER
 
 start_section "conda.build" "${GREEN}Building..${NC}"
-python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
+#$CONDA_PATH/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
+conda build $CONDA_BUILD_ARGS |tee /tmp/output.log
 end_section "conda.build"
 
 $SPACER
