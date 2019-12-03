@@ -157,11 +157,11 @@ jobs:
       - stage: "a"
         env:
         - PACKAGE=prog/icefunprog
-   #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=prog/openocd
-   #
+   
+      - stage: "a"
+        env:
+        - PACKAGE=prog/openocd
+   
       - stage: "a"
         env:
         - PACKAGE=prog/flterm
