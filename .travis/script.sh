@@ -18,7 +18,7 @@ end_section "conda.check"
 $SPACER
 
 start_section "conda.build" "${GREEN}Building..${NC}"
-python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
+$CONDA_PATH/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
 end_section "conda.build"
 
 $SPACER

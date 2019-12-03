@@ -12,8 +12,10 @@ output_to=sys.stdout
 
 args = list(sys.argv[1:])
 logfile = open(args.pop(0), "w")
+print(platform())
+print(platform()=="Windows")
 if platform() == "Windows":
-    child = pexepect.popen_spawn.PopenSpawn(' ' .join(args))
+    child = pexpect.popen_spawn.PopenSpawn(' ' .join(args))
 else:
     child = pexpect.spawn(' '.join(args))
 
