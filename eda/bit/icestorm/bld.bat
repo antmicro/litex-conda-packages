@@ -1,25 +1,26 @@
-sed -i "s/-ggdb //;" config.mk
-
-if errorlevel 1 exit 1
-
-
-
-make ^
-    CXX="x86_64-w64-mingw32-g++" ^
-    STATIC=1 ^
-    PYTHON=python ^
-    SUBDIRS="icebox icepack icemulti icepll icebram"
-if errorlevel 1 exit 1
-
+REM sed -i "s/-ggdb //;" config.mk
+REM 
+REM if errorlevel 1 exit 1
+REM 
+REM 
+REM 
+REM make ^
+REM     CXX="x86_64-w64-mingw32-g++" ^
+REM     STATIC=1 ^
+REM     PYTHON=python ^
+REM     SUBDIRS="icebox icepack icemulti icepll icebram"
+REM if errorlevel 1 exit 1
+REM 
 REM icetime doesn't work if compiled when PREFIX contains
 REM REM backslashes, so build it separately
-make ^
-CXX="x86_64-w64-mingw32-g++" ^
-STATIC=1 ^
-PYTHON=python ^
-PREFIX=~/ ^
-SUBDIRS="icetime"
-if errorlevel 1 exit 1
+REM make ^
+REM CXX="x86_64-w64-mingw32-g++" ^
+REM STATIC=1 ^
+REM PYTHON=python ^
+REM PREFIX=~/ ^
+REM SUBDIRS="icetime"
+REM if errorlevel 1 exit 1
+make -j2 STATIC=1
 
 mkdir %PREFIX%\bin
 if errorlevel 1 exit 1

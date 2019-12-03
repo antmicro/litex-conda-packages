@@ -10,12 +10,12 @@ addons:
 jobs:
   include:
     #REQUIRED
-      - stage: "a"
-        env:
-        - PACKAGE=lib/usb
-      - stage: "a"
-        env:
-        - PACKAGE=lib/ftdi
+#      - stage: "a"
+#        env:
+#        - PACKAGE=lib/usb
+#      - stage: "a"
+#        env:
+#        - PACKAGE=lib/ftdi
 #      - stage: "a"
 #        env:
 #        - PACKAGE=prog/iceprog
@@ -31,6 +31,9 @@ jobs:
 #      - stage: "a"
 #        env:
 #        - PACKAGE=eda/sim/icarus
+   - stage: "a"
+     env:
+     - PACKAGE=eda/bit/icestorm
 
 
    # Libraries
