@@ -170,10 +170,10 @@ jobs:
    #     env:
    #     - PACKAGE=prog/fxload
    #
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=prog/dfu-util
-   #
+      - stage: "a"
+        env:
+        - PACKAGE=prog/dfu-util
+   
       # EDA Tools - Bitstream Tool
       - stage: "a"
         env:
