@@ -183,10 +183,10 @@ jobs:
    #     env:
    #     - PACKAGE=eda/bit/prjtrellis
    #
-   #   # EDA Tools - Synthesis
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=eda/syn/yosys
+      # EDA Tools - Synthesis
+      - stage: "a"
+        env:
+        - PACKAGE=eda/syn/yosys
    #
    #   # EDA Tools - Place and Route
    #   - stage: "a"
