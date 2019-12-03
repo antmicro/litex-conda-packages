@@ -9,12 +9,6 @@ start_section "environment.conda" "Setting up basic ${YELLOW}conda environment${
 mkdir -p $BASE_PATH
 ./conda-get.sh $CONDA_PATH
 hash -r
-if [ $TRAVIS_OS_NAME = 'windows' ]; then
-    echo $PATH
-    export CONDA_PATH='/c/tools/miniconda3'
-    export PATH=$CONDA_PATH/Scripts/:$CONDA_PATH/bin/:$PATH
-    echo $PATH
-fi
 conda config --set always_yes yes --set changeps1 no
 conda install pexpect
 conda config --add channels timvideos

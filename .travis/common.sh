@@ -55,9 +55,16 @@ function end_section() {
 export PYTHONWARNINGS=ignore::UserWarning:conda_build.environ
 
 export BASE_PATH="/tmp/really-long-path"
-export CONDA_PATH="$BASE_PATH/conda"
 mkdir -p "$BASE_PATH"
-export PATH="$CONDA_PATH/bin:$PATH"
+if [ $TRAVIS_OS_NAME = 'windows' ]; then
+    echo $PATH
+    export CONDA_PATH='/c/tools/miniconda3'
+    export PATH=$CONDA_PATH/Scripts/:$CONDA_PATH/:$PATH
+    echo $PATH
+else
+    export CONDA_PATH="$BASE_PATH/conda"
+    export PATH="$CONDA_PATH/bin:$PATH"
+fi
 
 export GIT_SSL_NO_VERIFY=1
 export GITREV="$(git describe --long 2>/dev/null || echo "unknown")"
