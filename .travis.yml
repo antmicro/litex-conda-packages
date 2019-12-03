@@ -37,10 +37,10 @@ jobs:
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=or1k
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=gdb          TOOLCHAIN_ARCH=or1k
-   #
+      - stage: "a"
+        env:
+        - PACKAGE=gdb          TOOLCHAIN_ARCH=or1k
+   
       # rv32 toolchain
       - stage: "a"
         env:
@@ -54,10 +54,10 @@ jobs:
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=riscv32
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv32
-   #
+      - stage: "a"
+        env:
+        - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv32
+   
       # rv64 toolchain
       - stage: "a"
         env:
@@ -71,10 +71,10 @@ jobs:
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=riscv64
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv64
-   #
+      - stage: "a"
+        env:
+        - PACKAGE=gdb          TOOLCHAIN_ARCH=riscv64
+   
       # lm32 toolchain - no linux
       - stage: "a"
         env:
@@ -85,10 +85,10 @@ jobs:
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/newlib   TOOLCHAIN_ARCH=lm32
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=gdb          TOOLCHAIN_ARCH=lm32
-   #
+      - stage: "a"
+        env:
+        - PACKAGE=gdb          TOOLCHAIN_ARCH=lm32
+   
       # ppc64le toolchain
       - stage: "a"
         env:
@@ -102,10 +102,10 @@ jobs:
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=ppc64le
-   ##   - stage: "a"
-   ##     env:
-   ##     - PACKAGE=gdb          TOOLCHAIN_ARCH=ppc64le
-   #
+      - stage: "a"
+        env:
+        - PACKAGE=gdb          TOOLCHAIN_ARCH=ppc64le
+   
       # sh2 toolchain
       - stage: "a"
         env:
@@ -119,10 +119,10 @@ jobs:
    #   - stage: "a"
    #     env:
    #     - PACKAGE=gcc/linux-musl TOOLCHAIN_ARCH=sh
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=gdb          TOOLCHAIN_ARCH=sh
-   #
+      - stage: "a"
+        env:
+        - PACKAGE=gdb          TOOLCHAIN_ARCH=sh
+   
    #   # Full Linux musl toolchain using musl-cross-make
    #   - stage: "a"
    #     env:
