@@ -145,10 +145,10 @@ jobs:
    #     env:
    #     - PACKAGE=sdcc
    #
-   #   # Programming Tools
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=prog/iceprog
+      # Programming Tools
+      - stage: "a"
+        env:
+        - PACKAGE=prog/iceprog
    #
    #   - stage: "a"
    #     env:
