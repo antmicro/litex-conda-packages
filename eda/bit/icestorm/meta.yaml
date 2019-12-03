@@ -23,6 +23,7 @@ requirements:
   build:
     - msys2:m2w64-toolchain [win]
     - msys2:m2-base         [win]
+    - make                  [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
