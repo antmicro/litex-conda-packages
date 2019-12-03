@@ -6,11 +6,11 @@ set -e
 CONDA_PATH=${1:-~/conda}
 if [ $TRAVIS_OS_NAME = 'windows' ]; then
     if [ ! -d $CONDA_PATH -o ! -z "$CI"  ]; then
-        choco install miniconda3
+        choco install openssl.light
+        choco install miniconda3 --params="/AddToPath:1"
     fi
     export CONDA_PATH='/c/tools/miniconda3'
-    export PATH=$CONDA_PATH/condabin:$CONDA_PATH/bin:$PATH
-    alias conda='conda.bat'
+    export PATH=$CONDA_PATH/bin/:$CONDA_PATH/Scripts/:$PATH
 else
     if [ $TRAVIS_OS_NAME = 'linux' ]; then
         sys_name=Linux
@@ -27,8 +27,6 @@ else
 fi
 
 echo $PATH
-cmd //c 'echo %PATH%'
-ls -l $CONDA_PATH/condabin/*
 
 conda info
 
