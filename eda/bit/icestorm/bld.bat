@@ -7,11 +7,11 @@ sed -i "s/python3/python/;" icebox/Makefile
 if errorlevel 1 exit 1
 sed -i "s/python3/python/;" icetime/Makefile
 if errorlevel 1 exit 1
-make -j2 CXX="x86_64-w64-mingw32-g++" SUBDIRS="icebox icepack icemulti icepll icebram"
+make -j2 CXX="vs2017" SUBDIRS="icebox icepack icemulti icepll icebram"
 if errorlevel 1 exit 1
 
 REM icetime fails when PREFIX contains backslashes
-make -j2 CXX="x86_64-w64-mingw32-g++" SUBDIRS="icetime" PREFIX=~/
+make -j2 CXX="vs2017" SUBDIRS="icetime" PREFIX=~/
 if errorlevel 1 exit 1
 
 mkdir %PREFIX%\bin

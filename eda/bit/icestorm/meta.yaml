@@ -21,9 +21,7 @@ build:
 
 requirements:
   build:
-    - msys2:m2w64-toolchain [win]
-    - msys2:m2-base         [win]
-    - msys2:m2-make         [win]
+    - make         [win]
     - vs2017_win-64         [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
