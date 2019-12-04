@@ -19,7 +19,6 @@ else
         CPU_COUNT=$(nproc)
     elif [[ $OS == "Mac" ]]; then
         CPU_COUNT=$(sysctl -n hw.physicalcpu)
-        export CFLAGS="-Wno-error"
     fi
 fi
 
@@ -37,6 +36,7 @@ cd build
   --enable-usb_blaster_libftdi \
   --enable-jtag_vpi \
   --enable-remote-bitbang \
+  CFLAGS="-Wno-error"
 
 
 make -j$CPU_COUNT
