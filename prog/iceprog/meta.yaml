@@ -28,6 +28,8 @@ requirements:
     - msys:m2-base      [win]
     - make              [win]
     - vs2017_win-64     [win]
+    - libftdi
+    - libusb
   host:
     - libftdi
     - libusb
