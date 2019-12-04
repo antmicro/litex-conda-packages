@@ -16,12 +16,12 @@ jobs:
 #      - stage: "a"
 #        env:
 #        - PACKAGE=lib/ftdi
-      - stage: "a"
-        env:
-        - PACKAGE=prog/iceprog
 #      - stage: "a"
 #        env:
-#        - PACKAGE=prog/flterm 
+#        - PACKAGE=prog/iceprog
+      - stage: "a"
+        env:
+        - PACKAGE=prog/flterm 
 #      - stage: "a"
 #        env:
 #        - PACKAGE=eda/syn/yosys

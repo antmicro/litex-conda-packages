@@ -21,6 +21,10 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - vs2017_win-64    [win]
+    - msys2:m2-make [win]
+    - msys2:m2-base [win]
+    - msys2:m2w64-toolchain [win]
   run:
   {% for package in resolved_packages('host') %}
     - {{ package }}
