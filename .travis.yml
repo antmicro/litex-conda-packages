@@ -16,9 +16,9 @@ jobs:
 #      - stage: "a"
 #        env:
 #        - PACKAGE=lib/ftdi
-#      - stage: "a"
-#        env:
-#        - PACKAGE=prog/iceprog
+      - stage: "a"
+        env:
+        - PACKAGE=prog/iceprog
 #      - stage: "a"
 #        env:
 #        - PACKAGE=prog/flterm 
@@ -31,9 +31,9 @@ jobs:
 #      - stage: "a"
 #        env:
 #        - PACKAGE=eda/sim/icarus
-   - stage: "a"
-     env:
-     - PACKAGE=eda/bit/icestorm
+#   - stage: "a"
+#     env:
+#     - PACKAGE=eda/bit/icestorm
 
 
    # Libraries
