@@ -10,6 +10,9 @@ addons:
 jobs:
   include:
     #REQUIRED
+   - stage: "a"
+     env:
+     - PACKAGE=eda/bit/prjtrellis
 #      - stage: "a"
 #        env:
 #        - PACKAGE=lib/usb
@@ -31,9 +34,9 @@ jobs:
 #      - stage: "a"
 #        env:
 #        - PACKAGE=eda/sim/icarus
-   - stage: "a"
-     env:
-     - PACKAGE=eda/bit/icestorm
+#   - stage: "a"
+#     env:
+#     - PACKAGE=eda/bit/icestorm
 
 
    # Libraries
