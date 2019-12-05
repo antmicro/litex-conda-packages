@@ -21,20 +21,24 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - m2-base   [win]
     - cmake
-    - libboost
-    - py-boost
+    - py-boost  [not win]
+    - libboost  [not win]
     - python 3.7
   host:
-    - cmake
-    - patchelf
-    - pkg-config
-  run:
-    - bison
-    - flex
-    - libboost
     - py-boost
-    - python
+    - libboost
+    - cmake
+    - patchelf  [not win]
+    - pkg-config [not win]
+  run:
+    - bison     [not win]
+    - flex      [not win]
+    - m2-bison  [win]
+    - m2-flex   [win]
+
+    - python   3.7
 
 about:
   home: https://prjtrellis.readthedocs.io

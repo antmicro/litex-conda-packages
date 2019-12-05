@@ -349,10 +349,6 @@ jobs:
    - os: windows
      env:
      - PACKAGE=prog/dfu-util
-   # EDA Tools - Bitstream Tool
-   - os: windows
-     env:
-     - PACKAGE=eda/bit/prjtrellis
    # EDA Tools - Place and Route
    - os: windows
      env:
