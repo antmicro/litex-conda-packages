@@ -27,7 +27,7 @@ requirements:
     - python 3.7
   host:
     - cmake
-    - patchelf
+    - patchelf  [not win]
     - pkg-config [not win]
   run:
     - bison     [not win]
