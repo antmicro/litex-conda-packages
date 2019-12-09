@@ -21,27 +21,27 @@ build:
 
 requirements:
   build:
-    - msys2:m2w64-toolchain [win]
-    - msys2:m2-base [win]
-    - msys2:m2w64-tcl [win]
-    - msys2:m2-bison [win]
-    - msys2:m2-flex [win]
-    - python 3.7
+    - m2w64-toolchain [win]
+    - m2-base [win]
+    - m2-bash   [win]
+    - m2-bison [win]
+    - m2-flex [win]
+    - python 3.6
     - tk
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - msys2:m2w64-toolchain [win]
-    - msys2:m2-base [win]
-    - msys2:m2w64-tcl [win]
-    - msys2:m2-bison [win]
-    - msys2:m2-flex [win]
+    - m2w64-toolchain [win]
+    - m2-base [win]
+    - m2-bison [win]
+    - m2-flex [win]
+    - m2-libreadline [win]
     - bison [not win]
     - flex [not win]
-    - iverilog [not win]
     - libffi [not win]
     - pkg-config [not win]
-    - python 3.7
+    - python 3.6
+    - iverilog
   run:
     - python {{ python }}
 
