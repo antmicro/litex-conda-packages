@@ -24,13 +24,15 @@ requirements:
     - python 3.7
     - fontconfig [not win]
   host:
-    - bison
+    - bison     [not win]
+    - flex      [not win]
+    - m2-bison  [win]
+    - m2-flex   [win]
     - boost
     - cmake
     - eigen
-    - flex
     - icestorm
-    - pkg-config
+    - pkg-config    [not win]
     - python 3.7
   run:
     - icestorm
