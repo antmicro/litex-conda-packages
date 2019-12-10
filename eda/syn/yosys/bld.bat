@@ -52,7 +52,6 @@ make -j2^
 if errorlevel 1 exit 1
 
 mkdir %PREFIX%\bin
-if errorlevel 1 exit 1
 cp yosys.exe %PREFIX%\bin\yosys.exe
 if errorlevel 1 exit 1
 cp yosys-abc.exe %PREFIX%\bin\yosys-abc.exe
@@ -64,7 +63,6 @@ if errorlevel 1 exit 1
 cp yosys-config %PREFIX%\bin\yosys-config
 if errorlevel 1 exit 1
 mkdir %PREFIX%\share
-if errorlevel 1 exit 1
 cp -r share/. %PREFIX%\share\yosys\.
 if errorlevel 1 exit 1
 
