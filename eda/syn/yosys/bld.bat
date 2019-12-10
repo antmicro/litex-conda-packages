@@ -19,7 +19,7 @@ git clone %ABCURL% abc
 cd abc
 git fetch origin master
 git checkout %ABCREV%
-if errorlevel 1 GOTO:EOF
+if errorlevel 1 exit 1
 cd ..
 
 python -c "print(r'%PREFIX%'.replace('\\','/'))" > temp.txt
