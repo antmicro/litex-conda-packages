@@ -22,25 +22,27 @@ build:
 requirements:
   build:
     - m2w64-toolchain [win]
-    - m2-base [win]
-    - m2-bash   [win]
-    - m2-bison [win]
-    - m2-flex [win]
-    - python 3.6
+    - m2-base         [win]
+    - m2-bash         [win]
+    - m2-bison        [win]
+    - m2-flex         [win]
+    - python 3        [win]
+    - python 3.6      [not win]
     - tk
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - m2w64-toolchain [win]
-    - m2-base [win]
-    - m2-bison [win]
-    - m2-flex [win]
-    - m2-libreadline [win]
-    - bison [not win]
-    - flex [not win]
-    - libffi [not win]
-    - pkg-config [not win]
-    - python 3.6
+    - m2-base         [win]
+    - m2-bison        [win]
+    - m2-flex         [win]
+    - m2-libreadline  [win]
+    - python 3        [win]
+    - bison           [not win]
+    - flex            [not win]
+    - libffi          [not win]
+    - pkg-config      [not win]
+    - python 3.6      [not win]
     - iverilog
   run:
     - python {{ python }}
