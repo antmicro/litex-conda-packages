@@ -27,7 +27,7 @@ jobs:
    # lm32-newlib
       - stage: "a"
         env:
-        - PACKAGE=ctng-toolchains/newlib/lm32
+        - PACKAGE=ctng-toolchains
         - TOOLCHAIN_VARIANT=lm32-elf-newlib
 
       # or1k toolchain
