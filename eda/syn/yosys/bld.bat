@@ -36,7 +36,7 @@ set BISON_PKGDATADIR=%BASH_BUILD_PREFIX%/Library/usr/share/bison
 mkdir tmp
 
 
-make -j3^
+make -j5^
      YOSYS_VER="$VER (Fomu build)" ^
      ABCREV=default ^
      LDLIBS="-static -lstdc++ -lm" ^
