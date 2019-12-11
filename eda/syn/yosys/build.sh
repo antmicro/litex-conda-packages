@@ -4,7 +4,7 @@ set -e
 set -x
 
 if [ x"$TRAVIS" = xtrue ]; then
-	CPU_COUNT=5
+	CPU_COUNT=6
 fi
 
 which pkg-config
