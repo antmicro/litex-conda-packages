@@ -1,0 +1,28 @@
+From dca2fc03401d3bdc0688366c88201e7c8d2d7b95 Mon Sep 17 00:00:00 2001
+From: Jan Kowalewski <jkowalewski@antmicro.com>
+Date: Fri, 22 Nov 2019 10:49:13 +0100
+Subject: [PATCH] MacOS: empty archieves workaround
+
+---
+ Makefile | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index bd8f5c38..b6a90f2f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -168,7 +168,10 @@ lib/libc.a: $(AOBJS)
+ 
+ $(EMPTY_LIBS):
+ 	rm -f $@
+-	$(AR) rc $@
++	echo > empty.o
++	$(AR) rc $@ empty.o
++	rm empty.o
++	$(AR) d $@ empty.o
+ 
+ lib/%.o: obj/crt/$(ARCH)/%.o
+ 	cp $< $@
+-- 
+2.11.0 (Apple Git-81)
+

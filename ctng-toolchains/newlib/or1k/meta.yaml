@@ -1,0 +1,40 @@
+package:
+    name: toolchain-{{ environ.get('TOOLCHAIN_VARIANT')  }}
+    version: 9.1.0
+
+source:
+    - path: crosstool_configs/
+      folder: crosstool_configs
+    - path: patches/
+      folder: patches
+    - git_url: https://github.com/crosstool-ng/crosstool-ng
+      git_rev: 3f461da11f1f8e9dcfdffef24e1982b5ffd10305
+      folder: crosstool-ng
+      patches:
+        - patches/crosstool-ng/0001-add-or1k-and-lm32-architectures.patch
+        - patches/crosstool-ng/0002-curses-hack.patch
+
+build:
+    script_env:
+        - TOOLCHAIN_VARIANT
+
+requirements:
+    build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - autoconf
+        - pkg-config
+        - automake
+        - bison
+        - flex
+        - git
+        - libtool
+        - ncurses
+        - wget
+        - gperf
+        - help2man
+        - texinfo
+        - unzip
+        - gawk
+        - help2man
+        - gettext

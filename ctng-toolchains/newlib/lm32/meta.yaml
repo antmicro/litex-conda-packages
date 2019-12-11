@@ -1,0 +1,30 @@
+{% set version = '%s_%04i_%s'|format(GIT_DESCRIBE_TAG|replace('yosys-', '') or '0.X', GIT_DESCRIBE_NUMBER|int, GIT_DESCRIBE_HASH or 'gUNKNOWN') %}
+
+package:
+  name: toolchain-{{ environ.get('TOOLCHAIN_VARIANT')  }}
+  version: {{ version }}
+
+source:
+  - path: crosstool_configs/
+    folder: crosstool_configs
+  - path: patches/
+    folder: patches
+
+build:
+  # number: 201803050325
+  number: {{ environ.get('DATE_NUM') }}
+  # string: 20180305_0325
+  string: {{ environ.get('DATE_STR') }}
+  script_env:
+    - CI
+    - TRAVIS
+    - TOOLCHAIN_VARIANT
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - git
+    - wget
+    - help2man
+    - crosstool-ng

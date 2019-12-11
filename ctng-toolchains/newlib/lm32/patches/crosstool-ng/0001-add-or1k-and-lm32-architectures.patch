@@ -1,0 +1,89 @@
+From 31b115969a6dc5e083a6b1e202de2c16fbb5c69e Mon Sep 17 00:00:00 2001
+From: Tim 'mithro' Ansell <me@mith.ro>
+Date: Fri, 26 Jan 2018 15:16:26 +1100
+Subject: [PATCH] add or1k and lm32 architectures
+
+---
+ config/arch/lm32.in           |  9 +++++++++
+ config/arch/or1k.in           | 13 +++++++++++++
+ scripts/build/arch/lm32.sh    |  5 +++++
+ scripts/build/arch/or1k.sh    |  5 +++++
+ scripts/build/kernel/linux.sh |  2 ++
+ 5 files changed, 34 insertions(+)
+ create mode 100644 config/arch/lm32.in
+ create mode 100644 config/arch/or1k.in
+ create mode 100644 scripts/build/arch/lm32.sh
+ create mode 100644 scripts/build/arch/or1k.sh
+
+diff --git a/config/arch/lm32.in b/config/arch/lm32.in
+new file mode 100644
+index 00000000..f034cd8a
+--- /dev/null
++++ b/config/arch/lm32.in
+@@ -0,0 +1,9 @@
++# LatticeMico32 specific config options
++
++## no-package
++## select ARCH_SUPPORTS_32
++## select ARCH_DEFAULT_32
++## select ARCH_SUPPORTS_WITH_ABI
++## select ARCH_SUPPORTS_WITH_ARCH
++
++## help The LatticeMico32 architecture.
+diff --git a/config/arch/or1k.in b/config/arch/or1k.in
+new file mode 100644
+index 00000000..5e4a802a
+--- /dev/null
++++ b/config/arch/or1k.in
+@@ -0,0 +1,13 @@
++# OpenRISC 1000 (or1k) specific config options
++
++## no-package
++## select ARCH_SUPPORTS_32
++## select ARCH_DEFAULT_32
++## select ARCH_SUPPORTS_BOTH_MMU
++## select ARCH_DEFAULT_HAS_MMU
++## select ARCH_SUPPORTS_WITH_ABI
++## select ARCH_SUPPORTS_WITH_ARCH
++## select GCC_SRC_DEVEL
++
++## help The OpenRISC 1000 architecture.
++
+diff --git a/scripts/build/arch/lm32.sh b/scripts/build/arch/lm32.sh
+new file mode 100644
+index 00000000..6bb58342
+--- /dev/null
++++ b/scripts/build/arch/lm32.sh
+@@ -0,0 +1,5 @@
++# Compute LM32-specific values
++
++CT_DoArchTupleValues() {
++    CT_TARGET_ARCH="lm${CT_ARCH_BITNESS}"
++}
+diff --git a/scripts/build/arch/or1k.sh b/scripts/build/arch/or1k.sh
+new file mode 100644
+index 00000000..1aab172d
+--- /dev/null
++++ b/scripts/build/arch/or1k.sh
+@@ -0,0 +1,5 @@
++# Compute OR1K-specific values
++
++CT_DoArchTupleValues() {
++    CT_TARGET_ARCH="or1k"
++}
+diff --git a/scripts/build/kernel/linux.sh b/scripts/build/kernel/linux.sh
+index bfeadf07..4975df39 100644
+--- a/scripts/build/kernel/linux.sh
++++ b/scripts/build/kernel/linux.sh
+@@ -58,6 +58,8 @@ do_kernel_headers()
+     case "${CT_ARCH}:${CT_ARCH_BITNESS}" in
+         # ARM 64 (aka AArch64) is special
+         arm:64) kernel_arch="arm64";;
++        # so is openrisc
++        or1k:32) kernel_arch="openrisc";;
+     esac
+ 
+     CT_DoLog EXTRA "Installing kernel headers"
+-- 
+2.24.0.rc1
+
