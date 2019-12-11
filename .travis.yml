@@ -25,7 +25,7 @@ jobs:
         - PACKAGE=lib/ftdi
    #
    # lm32-newlib
-      - stage: "lm32-newlib"
+      - stage: "a"
         env:
         - PACKAGE=ctng-toolchains/newlib/lm32
         - TOOLCHAIN_VARIANT=lm32-elf-newlib
