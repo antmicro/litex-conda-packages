@@ -29,6 +29,16 @@ jobs:
         env:
         - PACKAGE=ctng-toolchains
         - TOOLCHAIN_VARIANT=lm32-elf-newlib
+   # or1k-newlib
+      - stage: "a"
+        env:
+        - PACKAGE=ctng-toolchains
+        - TOOLCHAIN_VARIANT=or1k-elf-newlib
+   # riscv32-newlib
+      - stage: "a"
+        env:
+        - PACKAGE=ctng-toolchains
+        - TOOLCHAIN_VARIANT=riscv32-elf-newlib
 
       # or1k toolchain
       - stage: "a"
