@@ -11,12 +11,13 @@ case "${UNAME_OUT}" in
                 exit;;
 esac
 echo "Build started for ${OS}..."
-
-# Build crosstool-ng
-cd crosstool-ng
-
-mkdir "${SRC_DIR}/crosstool-ng/build"
-export PATH="${PATH}:${SRC_DIR}/crosstool-ng/build/bin"
+echo "`which bash` ."
+echo "`which bash`"
+echo "`which bash`."
+echo "`which bash`"
+echo "`which bash`"
+echo "`which bash`"
+echo "`which bash`"
 
 if [[ $OS == "Linux" ]]; then
     # How to build with multiple jobs
