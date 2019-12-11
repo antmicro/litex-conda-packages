@@ -32,6 +32,10 @@ elif [[ $OS == "Mac" ]]; then
         ln -s `which bash` /usr/local/bin/bash
     fi
 
+    if [[ ! -f "/usr/local/bin/objcopy" ]]; then
+        ln -s `which gobjcopy` /usr/local/bin/objcopy
+    fi
+
     # Set number of max opened files
     ulimit -n 2048
 
@@ -44,7 +48,7 @@ elif [[ $OS == "Mac" ]]; then
 fi
 
 # Unset these env variables - required by crostool-ng
-unset LD_LIBRARY_PATH LIBRARY_PATH LPATH CPATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH OBJC_INCLUDE_PATH CFLAGS CXXFLAGS CC CXX CPPFLAGS LDFLAGS LDFLAGS_ALL CRT_OBJS LDSO_OBJS LIBC_OBJS CFLAGS_ALL CFLAGS_NOSSP CC LIBS CCAS CCASFLAGS CPP
+unset LD_LIBRARY_PATH LIBRARY_PATH LPATH CPATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH OBJC_INCLUDE_PATH CFLAGS CXXFLAGS CC CXX CPPFLAGS LDFLAGS LDFLAGS_ALL CRT_OBJS LDSO_OBJS LIBC_OBJS CFLAGS_ALL CFLAGS_NOSSP CC LIBS CCAS CCASFLAGS CPP CXX
 
 # Build toolchain from previously prepared config
 ct-ng version
