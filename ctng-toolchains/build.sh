@@ -32,10 +32,6 @@ elif [[ $OS == "Mac" ]]; then
     # Set number of max opened files
     ulimit -n 2048
 
-    # Add include dir to CPATH and choose proper libtool
-    export CPATH="${SRC_DIR}/../_build_env/include"
-    export LIBTOOL="${SRC_DIR}/../_build_env/bin/libtool"
-
     # How to build with multiple jobs
     export MAKE_J="sysctl -n hw.physicalcpu"
 fi
