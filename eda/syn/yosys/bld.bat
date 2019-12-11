@@ -66,6 +66,9 @@ mkdir %PREFIX%\share
 cp -r share/. %PREFIX%\share\yosys\.
 if errorlevel 1 exit 1
 
+find %BASH_PREFIX% -follow -type f -name '*.pyc' -delete
+set PYTHONDONTWRITEBYTECODE=true
+
 %PREFIX%\bin\yosys -V
 %PREFIX%\bin\yosys-abc -v 2>&1 | find "compiled"
 %PREFIX%\bin\yosys -Q -S tests/simple/always01.v
