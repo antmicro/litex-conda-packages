@@ -11,13 +11,6 @@ case "${UNAME_OUT}" in
                 exit;;
 esac
 echo "Build started for ${OS}..."
-echo "`which bash` ."
-echo "`which bash`"
-echo "`which bash`."
-echo "`which bash`"
-echo "`which bash`"
-echo "`which bash`"
-echo "`which bash`"
 
 if [[ $OS == "Linux" ]]; then
     # How to build with multiple jobs
