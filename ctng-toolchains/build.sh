@@ -28,6 +28,10 @@ elif [[ $OS == "Mac" ]]; then
         cp ${SRC_DIR}/patches/musl/macos/* ${SRC_DIR}/patches/musl/git-ac304227
     fi
 
+    if [[ ! -f "/usr/local/bin/bash" ]]; then
+        ln -s `which bash` /usr/local/bin/bash
+    fi
+
     # Set number of max opened files
     ulimit -n 2048
 
