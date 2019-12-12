@@ -22,19 +22,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - autoconf
-    - pkg-config
-    - automake
-    - bison
-    - flex
     - git
-    - libtool
-    - ncurses
     - wget
-    - gperf
     - help2man
-    - texinfo
-    - unzip
-    - gawk
-    - help2man
-    - gettext
+    - crosstool-ng
