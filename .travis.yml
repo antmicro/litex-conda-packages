@@ -55,12 +55,12 @@ jobs:
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
-     - TOOLCHAIN_VARIANT=or1k-elf-musl
+     - TOOLCHAIN_VARIANT=or1k-linux-musl
    # riscv32-musl
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
-     - TOOLCHAIN_VARIANT=riscv32-elf-musl
+     - TOOLCHAIN_VARIANT=riscv32-linux-musl
 
    # or1k toolchain
    #- stage: "Binutils"
