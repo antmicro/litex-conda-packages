@@ -1,0 +1,36 @@
+From 567053d3b0bfb3d03e4b6a5e106f352120b5a4c8 Mon Sep 17 00:00:00 2001
+From: Tomasz Gorochowik <tgorochowik@antmicro.com>
+Date: Wed, 30 Oct 2019 14:08:31 +0100
+Subject: [PATCH] curses hack
+
+---
+ configure.ac | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/configure.ac b/configure.ac
+index ae4a0274..4798f832 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -301,6 +301,19 @@ AS_IF([test "x$ax_cv_menu" != "xyes" ], [AC_MSG_ERROR([menu library not found])]
+ 
+ AH_BOTTOM([
+ /* Select the correct curses/menu/panel headers */
++
++#ifndef HAVE_NCURSESW_CURSES_H
++#define HAVE_NCURSESW_CURSES_H 1
++#endif
++
++#ifndef HAVE_NCURSESW_PANEL_H
++#define HAVE_NCURSESW_PANEL_H 1
++#endif
++
++#ifndef HAVE_NCURSESW_MENU_H
++#define HAVE_NCURSESW_MENU_H 1
++#endif
++
+ #if defined HAVE_NCURSESW_CURSES_H
+ #  define CURSES_LOC <ncursesw/curses.h>
+ #elif defined HAVE_NCURSESW_H
+-- 
+2.23.0
+
