@@ -17,6 +17,7 @@ build:
     - CI
     - TRAVIS
     - TOOLCHAIN_VARIANT
+    - CONDA_PATH
 
 requirements:
   build:
