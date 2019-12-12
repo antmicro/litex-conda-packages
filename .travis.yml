@@ -26,41 +26,49 @@ jobs:
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=lm32-elf-newlib
+     - TRAVIS_WAIT_JOB=yes
    # or1k-newlib
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=or1k-elf-newlib
+     - TRAVIS_WAIT_JOB=yes
    # riscv32-newlib
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=riscv32-elf-newlib
+     - TRAVIS_WAIT_JOB=yes
    # lm32-nostdc
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=lm32-elf-nostdc
+     - TRAVIS_WAIT_JOB=yes
    # or1k-nostdc
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=or1k-elf-nostdc
+     - TRAVIS_WAIT_JOB=yes
    # riscv32-nostdc
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=riscv32-elf-nostdc
+     - TRAVIS_WAIT_JOB=yes
    # or1k-musl
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=or1k-linux-musl
+     - TRAVIS_WAIT_JOB=yes
    # riscv32-musl
    - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=riscv32-linux-musl
+     - TRAVIS_WAIT_JOB=yes
 
    # or1k toolchain
    #- stage: "Binutils"
