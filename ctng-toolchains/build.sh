@@ -43,7 +43,7 @@ unset LD_LIBRARY_PATH LIBRARY_PATH LPATH CPATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH
 ct-ng version
 export DEFCONFIG="${SRC_DIR}/crosstool_configs/${TOOLCHAIN_VARIANT}.config"
 ct-ng defconfig
-ct-ng build.`${MAKE_J}`
+ct-ng V=2 build.`${MAKE_J}`
 
 # Everything put in ${PREFIX}
 # will be included in output conda package
