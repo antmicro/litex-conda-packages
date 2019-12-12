@@ -11,7 +11,9 @@ case "${UNAME_OUT}" in
                 exit;;
 esac
 echo "Build started for ${OS}..."
-echo "`otool -l $CONDA_PATH/libexec/crosstool-ng/conf`"
+echo "`otool -l ${SRC_DIR}/../_build_env/libexec/crosstool-ng/conf`"
+echo "`otool -l ${SRC_DIR}/../_build_env/libexec/crosstool-ng/conf`"
+echo "`otool -l ${SRC_DIR}/../_build_env/libexec/crosstool-ng/conf`"
 
 if [[ $OS == "Linux" ]]; then
     # How to build with multiple jobs
