@@ -9,33 +9,58 @@ addons:
 jobs:
   include:
    # Libraries
-   - stage: "Libraries"
-     env:
-     - PACKAGE=lib/isl
+   #- stage: "Libraries"
+   #  env:
+   #  - PACKAGE=lib/isl
 
-   - stage: "Libraries"
-     env:
-     - PACKAGE=lib/usb
+   #- stage: "Libraries"
+   #  env:
+   #  - PACKAGE=lib/usb
 
-   - stage: "Libraries"
-     env:
-     - PACKAGE=lib/ftdi
+   #- stage: "Libraries"
+   #  env:
+   #  - PACKAGE=lib/ftdi
 
    # lm32-newlib
-   - stage: "a"
+   - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=lm32-elf-newlib
    # or1k-newlib
-   - stage: "a"
+   - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=or1k-elf-newlib
    # riscv32-newlib
-   - stage: "a"
+   - stage: "Binutils"
      env:
      - PACKAGE=ctng-toolchains
      - TOOLCHAIN_VARIANT=riscv32-elf-newlib
+   # lm32-nostdc
+   - stage: "Binutils"
+     env:
+     - PACKAGE=ctng-toolchains
+     - TOOLCHAIN_VARIANT=lm32-elf-nostdc
+   # or1k-nostdc
+   - stage: "Binutils"
+     env:
+     - PACKAGE=ctng-toolchains
+     - TOOLCHAIN_VARIANT=or1k-elf-nostdc
+   # riscv32-nostdc
+   - stage: "Binutils"
+     env:
+     - PACKAGE=ctng-toolchains
+     - TOOLCHAIN_VARIANT=riscv32-elf-nostdc
+   # or1k-musl
+   - stage: "Binutils"
+     env:
+     - PACKAGE=ctng-toolchains
+     - TOOLCHAIN_VARIANT=or1k-elf-musl
+   # riscv32-musl
+   - stage: "Binutils"
+     env:
+     - PACKAGE=ctng-toolchains
+     - TOOLCHAIN_VARIANT=riscv32-elf-musl
 
    # or1k toolchain
    #- stage: "Binutils"
