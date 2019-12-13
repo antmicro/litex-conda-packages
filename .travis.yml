@@ -28,12 +28,12 @@ jobs:
 #      - stage: "a"
 #        env:
 #        - PACKAGE=eda/pnr/nextpnr/ice40
-#      - stage: "a"
-#        env:
-#        - PACKAGE=eda/sim/icarus
-   - stage: "a"
-     env:
-     - PACKAGE=eda/bit/icestorm
+      - stage: "a"
+        env:
+        - PACKAGE=eda/sim/icarus
+#   - stage: "a"
+#     env:
+#     - PACKAGE=eda/bit/icestorm
 
 
    # Libraries
