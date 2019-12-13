@@ -355,9 +355,6 @@ jobs:
    # EDA Tools - Bitstream Tool
    - os: windows
      env:
-     - PACKAGE=eda/bit/icestorm
-   - os: windows
-     env:
      - PACKAGE=eda/bit/prjtrellis
    # EDA Tools - Synthesis
    - os: windows
