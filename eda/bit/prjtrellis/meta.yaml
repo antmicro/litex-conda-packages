@@ -25,7 +25,7 @@ requirements:
     - cmake
     - py-boost  [not win]
     - libboost  [not win]
-    - python 3.*
+    - python 3.7
   host:
     - py-boost
     - libboost
@@ -38,7 +38,7 @@ requirements:
     - m2-bison  [win]
     - m2-flex   [win]
 
-    - python   3.*
+    - python   3.7
 
 about:
   home: https://prjtrellis.readthedocs.io
