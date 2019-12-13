@@ -7,6 +7,8 @@ package:
 source:
   git_url: https://github.com/SymbiFlow/prjtrellis.git
   git_rev: master
+  patches:
+    - win_build.patch  [win]
 
 build:
   # number: 201803050325
@@ -21,11 +23,14 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - m2-base   [win]
     - cmake
-    - libboost
-    - py-boost
-    - python 3.7
+    - py-boost  [not win]
+    - libboost  [not win]
+    - python 3.*
   host:
+    - py-boost
+    - libboost
     - cmake
     - patchelf  [not win]
     - pkg-config [not win]
@@ -34,9 +39,8 @@ requirements:
     - flex      [not win]
     - m2-bison  [win]
     - m2-flex   [win]
-    - libboost
-    - py-boost
-    - python
+
+    - python   3.*
 
 about:
   home: https://prjtrellis.readthedocs.io
