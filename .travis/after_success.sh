@@ -13,6 +13,7 @@ end_section "package.contents"
 if [ x$TRAVIS_BRANCH = x"master" -a x$TRAVIS_EVENT_TYPE != x"cron" -a x$TRAVIS_PULL_REQUEST == xfalse ]; then
 	$SPACER
 
+	# TODO: multiple package upload
 	start_section "package.upload" "${GREEN}Package uploading...${NC}"
 	anaconda -t $ANACONDA_TOKEN upload --user $ANACONDA_USER --label main $CONDA_OUT
 	end_section "package.upload"
