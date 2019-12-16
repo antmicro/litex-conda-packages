@@ -17,8 +17,22 @@ end_section "conda.check"
 
 $SPACER
 
-start_section "conda.build" "${GREEN}Building..${NC}"
-$CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
+if [[ $CONDA_TEST == "yes" ]]; then
+    start_section "conda.build" "${GREEN}Testing..${NC}"
+    git clone $STORAGE_URL storage
+    cd storage
+    export TEST_PACKAGE=`realpath $FULL_PACKAGE_NAME`
+    if [[ -z $TEST_PACKAGE ]]; then
+        echo "Package version changed! Please rerun $PACKAGE..."
+        exit 1
+    fi
+    $CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_TEST_ARGS $TEST_PACKAGE
+    cp $TEST_PACKAGE $CONDA_OUT
+    cd ..
+else
+    start_section "conda.build" "${GREEN}Building..${NC}"
+    $CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
+fi
 end_section "conda.build"
 
 $SPACER
