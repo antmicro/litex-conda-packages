@@ -61,11 +61,17 @@ export PATH="$CONDA_PATH/bin:$PATH"
 
 export GIT_SSL_NO_VERIFY=1
 export GITREV="$(git describe --long 2>/dev/null || echo "unknown")"
-export CONDA_BUILD_ARGS="-c timvideos $PACKAGE"
+export CONDA_BUILD_ARGS="-c timvideos $EXTRA_BUILD_ARGS $PACKAGE"
+export CONDA_TEST_ARGS="-c timvideos --test $EXTRA_TEST_ARGS"
 if [ -f "$PACKAGE/conda_build_config.$TOOLCHAIN_ARCH.yaml" ]; then
 	export CONDA_BUILD_ARGS="$CONDA_BUILD_ARGS -m $PACKAGE/conda_build_config.$TOOLCHAIN_ARCH.yaml"
 fi
 export CONDA_OUT="$(conda render --output $CONDA_BUILD_ARGS 2> /dev/null | grep conda-bld | grep tar.bz2 | tail -n 1 | sed -e's/-[0-9]\+\.tar/*.tar/' -e's/-git//')"
+
+export PACKAGE_NAME=`echo $CONDA_OUT | rev | cut -f1 -d"/" | rev`
+export FULL_PACKAGE_NAME="${TRAVIS_OS_NAME}-${PACKAGE_NAME}"
+export OS_PACKAGE=`echo $FULL_PACKAGE_NAME | cut -f1-2 -d"-"`*
+
 
 echo "          GITREV: $GITREV"
 echo "      CONDA_PATH: $CONDA_PATH"
