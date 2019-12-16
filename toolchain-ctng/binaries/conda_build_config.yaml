@@ -1,0 +1,37 @@
+ctng_target_platform:
+  - riscv32-linux-musl
+  - or1k-linux-musl
+  - riscv32-elf-newlib
+  - or1k-elf-newlib
+  - lm32-elf-newlib
+  - riscv32-elf-nostdc
+  - or1k-elf-nostdc
+  - lm32-elf-nostdc
+ctng_target_platform_short:
+  - riscv32-linux-musl
+  - or1k-linux-musl
+  - riscv32-elf
+  - or1k-elf
+  - lm32-elf
+ctng_cpu_arch:
+  - riscv
+  - or1k
+  - lm32
+ctng_gcc_build_number:
+  - 2
+ctng_gcc:
+  - 9.1.0
+ctng_binutils:
+  - 2.32
+ctng_isl:
+  - 0.21
+ctng_gmp:
+  - 6.1.2
+ctng_mpc:
+  - 1.1.0
+ctng_kernel:
+  - 5.3.1
+ctng_libc:
+  - musl
+  - newlib
+  - nostdc

@@ -1,0 +1,41 @@
+package:
+  name: ctng-compiler-activation
+  version: {{ ctng_gcc }}
+
+source:
+  path: .
+
+build:
+  # defined in conda_build_config.yaml so that we can keep it associated with a particular GCC version number
+  number: "{{ ctng_gcc_activation_build_num }}"
+
+requirements:
+  build:
+    # this dep is for us to be able to use gcc -dumpmachine to get the CHOST value
+    - gcc_impl_{{ ctng_target_platform }}
+
+outputs:
+  - name: gcc_{{ ctng_target_platform }}
+    script: install-gcc.sh
+    requirements:
+      run:
+        - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        # for activation of binutils env vars
+        - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+    about:
+      summary: GNU C Compiler (activation scripts)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - name: binutils_{{ ctng_target_platform }}
+    version: "{{ ctng_binutils }}"
+    script: install-binutils.sh
+    requirements:
+      run:
+        - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+    about:
+      summary: The GNU Binutils are a collection of binary tools (activation scripts)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+about:
+  summary: Activation scripts for gcc and binutils
+

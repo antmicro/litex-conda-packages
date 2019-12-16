@@ -1,0 +1,73 @@
+{% set build_num = ctng_gcc_build_number %}
+
+package:
+    name: ctng-compilers
+    version: {{ ctng_gcc }}
+
+source:
+    - path: .
+
+requirements:
+    build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - crosstool-ng =1.24.0.37_g3f461da
+        - git
+        - wget
+        - unzip
+
+outputs:
+  - name: gcc_impl_{{ ctng_target_platform }}
+    script: install-gcc.sh
+    build:
+      number: {{ build_num }}
+      detect_binary_files_with_prefix: False
+      binary_relocation:
+        - 'bin/*'
+        - 'lib/*.so*'
+        - 'libexec/**/*.so*'
+        - 'libexec/**/cc1*'
+        - 'libexec/**/collect2'
+        - 'libexec/**/gcc'
+        - 'libexec/**/lto*'
+        - 'libexec/**/plugin/gengtype'
+      missing_dso_whitelist:
+        - '*'
+      runpath_whitelist:
+        - "x86_64-conda_cos6-linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+    requirements:
+      run:
+        - {{ pin_subpackage("binutils_impl_" ~ ctng_target_platform, exact=True) }}
+    test:
+      files:
+        - tests
+      commands:
+        - CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc
+        - ${CC} -print-sysroot
+        - ${CC} -Wall tests/aligned_alloc_{{ ctng_libc }}.c -o c_aligned
+        - test -f c_aligned
+    about:
+      summary: GNU C Compiler
+      home: https://gcc.gnu.org/
+      license: GPL-3.0-with-GCC-exception
+
+  - name: binutils_impl_{{ ctng_target_platform }}
+    version: "{{ ctng_binutils }}"
+    script: install-binutils.sh
+    build:
+      number: {{ build_num }}
+      detect_binary_files_with_prefix: False
+      binary_relocation:
+        - 'bin/*'
+        - 'lib/*.so'
+        - 'libexec/**/*.so*'
+      missing_dso_whitelist:
+        - "*"
+    test:
+      commands:
+        - test -f ${PREFIX}/{{ ctng_target_platform_short }}*/bin/ar
+        - test -f ${PREFIX}/{{ ctng_target_platform_short }}*/bin/ld
+    about:
+      summary: The GNU Binutils are a collection of binary tools.
+      home: https://www.gnu.org/software/binutils/
+      license: GPL-3.0-or-later
