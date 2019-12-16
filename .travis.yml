@@ -183,10 +183,20 @@ jobs:
    #     env:
    #     - PACKAGE=eda/bit/prjtrellis
    #
-   #   # EDA Tools - Synthesis
-   #   - stage: "a"
-   #     env:
-   #     - PACKAGE=eda/syn/yosys
+      # EDA Tools - Synthesis
+      - stage: "a"
+        env:
+        - PACKAGE=eda/syn/yosys
+        - UPLOAD=storage
+        - EXTRA_BUILD_ARGS="--no-test"
+        - STORAGE_URL="https://github.com/antmicro/travis-temp-storage.git"
+
+      - stage: "b"
+        env:
+        - PACKAGE=eda/syn/yosys
+        - CONDA_TEST=yes
+        - STORAGE_URL="https://github.com/antmicro/travis-temp-storage.git"
+        
    #
    #   # EDA Tools - Place and Route
    #   - stage: "a"
