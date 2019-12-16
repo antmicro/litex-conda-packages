@@ -18,7 +18,16 @@ end_section "conda.check"
 $SPACER
 
 start_section "conda.build" "${GREEN}Building..${NC}"
-$CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log conda build $CONDA_BUILD_ARGS
+TRAVIS_WAIT=""
+if [[ ! -z $TRAVIS_WAIT_TIME ]]; then
+	TRAVIS_WAIT="travis_wait ${TRAVIS_WAIT_TIME}"
+fi
+if [[ -z $CUSTOM_BUILD_SCRIPT ]]; then
+	CONDA_BUILD="${TRAVIS_WAIT} ${CONDA_PATH}/bin/python ${TRAVIS_BUILD_DIR}/.travis-output.py /tmp/output.log conda build ${CONDA_BUILD_ARGS}"
+else
+	CONDA_BUILD="${TRAVIS_WAIT} bash ${CUSTOM_BUILD_SCRIPT}"
+fi
+$CONDA_BUILD
 end_section "conda.build"
 
 $SPACER
