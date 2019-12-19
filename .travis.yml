@@ -220,9 +220,6 @@ jobs:
    - os: windows
      env:
      - PACKAGE=lib/isl
-   - os: windows
-     env:
-     - PACKAGE=lib/ftdi
    # or1k toolchain
    - os: windows
      env:
