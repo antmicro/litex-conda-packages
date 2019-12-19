@@ -336,9 +336,6 @@ jobs:
    # Programming Tools
    - os: windows
      env:
-     - PACKAGE=prog/iceprog
-   - os: windows
-     env:
      - PACKAGE=prog/icefunprog
    - os: windows
      env:
