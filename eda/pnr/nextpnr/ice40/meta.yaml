@@ -21,23 +21,26 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - python 3.7
-    - fontconfig
-  host:
-    - bison
-    - boost
+    - m2-base   [win]
     - cmake
-    - eigen
-    - flex
+    - python 3.7
+    - fontconfig [not win]
+  host:
+    - bison [not win]
+    - m2-bison  [win]
+    - boost     [not win]
+    - eigen [not win]
+    - flex  [not win]
+    - m2-flex  [win]
     - icestorm
-    - pkg-config
+    - pkg-config [not win]
     - python 3.7
   run:
     - icestorm
-    - libboost
-    - py-boost
+    - libboost  [not win]
+    - py-boost  [not win]
     - python
-    - yosys
+    
 
 test:
   commands:

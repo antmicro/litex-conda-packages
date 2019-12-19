@@ -355,9 +355,6 @@ jobs:
      - PACKAGE=eda/pnr/arachne
    - os: windows
      env:
-     - PACKAGE=eda/pnr/nextpnr/ice40
-   - os: windows
-     env:
      - PACKAGE=eda/pnr/nextpnr/ecp5
    - os: windows
      env:
