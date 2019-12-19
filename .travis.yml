@@ -379,9 +379,6 @@ jobs:
    # EDA Tools - Simulation
    - os: windows
      env:
-     - PACKAGE=eda/sim/icarus
-   - os: windows
-     env:
      - PACKAGE=eda/sim/verilator
 
 matrix:
