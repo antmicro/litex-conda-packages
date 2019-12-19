@@ -19,19 +19,19 @@ build:
 requirements:
   build:
     - boost=1.67
-    - python=2.7
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - python
+    - {{ compiler('c') }}   [not win]
+    - {{ compiler('cxx') }} [not win]
     - libusb
   host:
-    - cmake # [linux]
+    - cmake
     - boost=1.67
-    - pkg-config
+    - pkg-config [not win]
     - swig
   run:
     - {{ compiler('c') }}
-    - libgcc-ng
-    - libstdcxx-ng
+    - libgcc-ng [not win]
+    - libstdcxx-ng [not win]
     - libusb
     - python
 
