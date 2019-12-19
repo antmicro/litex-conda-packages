@@ -215,14 +215,11 @@ jobs:
      - PACKAGE=eda/sim/verilator
 
   exclude:
-   # Exclude all builds on windows
+   # Exclude builds on windows
    # Libraries
    - os: windows
      env:
      - PACKAGE=lib/isl
-   - os: windows
-     env:
-     - PACKAGE=lib/usb
    - os: windows
      env:
      - PACKAGE=lib/ftdi
