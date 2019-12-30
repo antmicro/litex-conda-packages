@@ -10,6 +10,19 @@ osx_image:
 dist:
   - xenial
 
+stages:
+  - "Libraries"
+  - "Binutils"
+  - "GCC - nostdc"
+  - "GCC - newlib"
+  - "GCC - Linux (musl)"
+  - "GDB"
+  - "Toolchain - linux musl"
+  - "Other tools"
+  - "Programming tools"
+  - "Eda tools"
+  - "Separate tests"
+
 jobs:
   include:
  # Libraries
