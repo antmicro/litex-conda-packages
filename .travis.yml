@@ -20,6 +20,7 @@ stages:
   - "Toolchain - linux musl"
   - "Other tools"
   - "Programming tools"
+  - "Miscellaneus"
   - "Eda tools"
   - "Separate tests"
 
@@ -251,10 +252,6 @@ jobs:
    - stage: "Programming Tools"
      os: linux
      env:
-     - PACKAGE=prog/flterm
-   - stage: "Programming Tools"
-     os: linux
-     env:
      - PACKAGE=prog/fxload
    - stage: "Programming Tools"
      os: linux
@@ -277,15 +274,22 @@ jobs:
    - stage: "Programming Tools"
      os: osx
      env:
-     - PACKAGE=prog/flterm
-   - stage: "Programming Tools"
-     os: osx
-     env:
      - PACKAGE=prog/dfu-util
    - stage: "Programming Tools"
      os: osx
      env:
      - PACKAGE=prog/openocd
+ # Miscellaneus
+   # Linux
+   - stage: "Miscellaneus"
+     os: linux
+     env:
+     - PACKAGE=misc/flterm
+   # OSX
+   - stage: "Miscellaneus"
+     os: osx
+     env:
+     - PACKAGE=misc/flterm
  # EDA Tools - Bitstream Tool
    # Linux
    - stage: "EDA Tools"
