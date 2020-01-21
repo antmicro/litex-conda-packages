@@ -12,18 +12,18 @@ dist:
 
 stages:
   - "Libraries"
-  - "Binutils"
-  - "GCC - nostdc"
-  - "GCC - newlib"
-  - "GCC - Linux (musl)"
-  - "GDB"
-  - "Toolchain - linux musl"
   - "Other tools"
   - "Programming tools"
   - "Miscellaneus"
   - "EDA Tools - bitstream"
   - "Eda tools"
   - "Separate tests"
+  - "Binutils"
+  - "GCC - nostdc"
+  - "GCC - newlib"
+  - "GCC - Linux (musl)"
+  - "GDB"
+  - "Toolchain - linux musl"
 
 jobs:
   include:
